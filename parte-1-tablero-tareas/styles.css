@@ -1,0 +1,156 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #F4F6F9;
+  color: #1E293B;
+  line-height: 1.5;
+  padding-bottom: 3rem;
+}
+
+header {
+  background: #065A82;
+  color: #FFFFFF;
+  padding: 1.25rem 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#controles, #filtros, #stats, #tablero {
+  max-width: 960px;
+  width: 92%;
+  margin: 0 auto 1.25rem;
+}
+
+/* Formulario de creación */
+#controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background: #FFFFFF;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+#controles input, #controles select {
+  flex: 1 1 200px;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+#btn-agregar {
+  padding: 0.6rem 1.25rem;
+  background: #065A82;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#btn-agregar:hover { background: #1C7293; }
+
+/* Filtros */
+#filtros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filtro-grupo { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.btn-filtro-estado {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #CBD5E1;
+  background: #FFFFFF;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.btn-filtro-estado.activo {
+  background: #065A82;
+  color: #FFFFFF;
+  border-color: #065A82;
+}
+
+#select-filtro-prioridad {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  background: #FFFFFF;
+}
+
+/* Estadísticas */
+#stats {
+  background: #E8F4F8;
+  color: #065A82;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+/* Tablero de tarjetas */
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.tarea {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  border-left: 5px solid #94A3B8;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Clase usada por aplicarFiltros() */
+.tarea.oculta { display: none; }
+
+/* Colores por estado */
+.estado-pendiente   { border-left-color: #F59E0B; }
+.estado-en-progreso { border-left-color: #0284C7; }
+.estado-completada  { border-left-color: #16A34A; opacity: 0.85; }
+
+.badge-prioridad, .badge-estado {
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.prioridad-alta  .badge-prioridad { background: #FEE2E2; color: #B91C1C; }
+.prioridad-media .badge-prioridad { background: #FEF3C7; color: #B45309; }
+.prioridad-baja  .badge-prioridad { background: #DCFCE7; color: #15803D; }
+
+.badge-estado { background: #E2E8F0; color: #334155; }
+
+.acciones-tarea {
+  margin-top: auto;
+  padding-top: 0.6rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-avanzar, .btn-eliminar {
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-avanzar  { background: #065A82; color: #FFFFFF; }
+.btn-eliminar { background: #DC2626; color: #FFFFFF; }
