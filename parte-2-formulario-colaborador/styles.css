@@ -1,0 +1,128 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #F4F6F9;
+  color: #1E293B;
+  line-height: 1.5;
+  padding: 2rem 1rem;
+}
+
+.contenedor {
+  max-width: 520px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  color: #065A82;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.campo-grupo {
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-grupo label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #334155;
+  margin-bottom: 0.35rem;
+}
+
+.campo-grupo input[type="text"],
+.campo-grupo input[type="email"],
+.campo-grupo input[type="password"],
+.campo-grupo input[type="number"],
+.campo-grupo select {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus {
+  outline: none;
+  border-color: #065A82;
+  box-shadow: 0 0 0 3px rgba(6, 90, 130, 0.15);
+}
+
+/* Estados de validación aplicados por JS */
+input.invalido, select.invalido {
+  border-color: #C62828 !important;
+  background-color: #FFF8F8;
+}
+
+input.valido, select.valido {
+  border-color: #2E7D32;
+}
+
+.msg-error {
+  display: none;
+  color: #C62828;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+
+.msg-error.visible {
+  display: block;
+}
+
+#fortaleza {
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-top: 0.3rem;
+}
+
+.campo-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.oculto {
+  display: none !important;
+}
+
+#btn-registrar {
+  width: 100%;
+  padding: 0.75rem;
+  background: #065A82;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+#btn-registrar:hover { background: #1C7293; }
+
+#mensaje-exito {
+  margin-top: 1rem;
+  padding: 0.85rem;
+  background: #E8F5E9;
+  color: #2E7D32;
+  border: 1px solid #A5D6A7;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 700;
+}
+
+#mensaje-exito.visible {
+  display: block;
+}
